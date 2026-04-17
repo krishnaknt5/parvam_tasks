@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card p-3">
+<h5>Total Students</h5>
+<h3>{{students|length}}</h3>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card p-3">
+<h5>Top Score</h5>
+<h3>{{students[0][10] if students else 0}}</h3>
+</div>
+</div>
+
+</div>
+
+<br>
+
+<canvas id="chart"></canvas>
+
+<br>
+
+<table class="table table-striped">
+<tr>
+<th>Name</th><th>Total</th><th>Grade</th><th>Rank</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{s[1]}}</td>
+<td>{{s[10]}}</td>
+<td>{{s[11]}}</td>
+<td>{{s[12]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<script src="/static/js/chart.js"></script>
+
+{% endblock %}
+<form method="POST" action="/add">
+<div class="row">
+
+<div class="col"><input name="name" class="form-control" placeholder="Name"></div>
+<div class="col"><input name="usn" class="form-control" placeholder="USN"></div>
+<div class="col"><input name="class" class="form-control" placeholder="Class"></div>
+<div class="col"><input name="department" class="form-control" placeholder="Dept"></div>
+
+</div><br>
+
+<div class="row">
+<div class="col"><input name="math" class="form-control" placeholder="Math"></div>
+<div class="col"><input name="science" class="form-control" placeholder="Science"></div>
+<div class="col"><input name="english" class="form-control" placeholder="English"></div>
+</div><br>
+
+<div class="row">
+<div class="col"><input name="attendance" class="form-control" placeholder="Attendance"></div>
+<div class="col"><input name="sports" class="form-control" placeholder="Sports"></div>
+</div><br>
+
+<div class="row">
+<div class="col"><input name="parent_name" class="form-control" placeholder="Parent Name"></div>
+<div class="col"><input name="parent_whatsapp" class="form-control" placeholder="Parent WhatsApp"></div>
+<div class="col"><input name="student_whatsapp" class="form-control" placeholder="Student WhatsApp"></div>
+</div><br>
+
+<button class="btn btn-success">Add Student</button>
+<a href="/download/{{ s[2] }}" class="btn btn-primary btn-sm">
+Download PDF
+</a>
+</form>

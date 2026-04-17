@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<table class="table">
+<tr>
+<th>Name</th><th>USN</th><th>Total</th><th>Grade</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{s[1]}}</td>
+<td>{{s[2]}}</td>
+<td>{{s[10]}}</td>
+<td>{{s[11]}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container">
+    <h2>Add Item</h2>
+
+    <form method="POST">
+        <input name="name" placeholder="Item Name" required>
+        <textarea name="description" placeholder="Description"></textarea>
+        <button>Add Item</button>
+    </form>
+
+    <a href="/dashboard">Back</a>
+</div>

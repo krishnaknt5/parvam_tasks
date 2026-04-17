@@ -1,0 +1,19 @@
+body {
+    background: #f4f6f9;
+}
+
+.sidebar {
+    width: 220px;
+    height: 100vh;
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.card {
+    border-radius: 12px;
+}

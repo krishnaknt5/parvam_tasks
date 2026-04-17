@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+<input name="name" placeholder="Name">
+<input name="email">
+<input name="password" type="password">
+<select name="role">
+<option value="admin">Admin</option>
+<option value="student">Student</option>
+</select>
+<button>Register</button>
+</form>
+{% endblock %}

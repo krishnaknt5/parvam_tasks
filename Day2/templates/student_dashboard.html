@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h2>Student Dashboard</h2>
+
+<div class="card p-3">
+<h4>Your Performance</h4>
+
+<p>Total: {{student.total}}</p>
+<p>Grade: {{student.grade}}</p>
+<p>Rank: {{student.rank}}</p>
+
+<a href="/download_report" class="btn btn-success">Download Report</a>
+
+</div>
+
+{% endblock %}
